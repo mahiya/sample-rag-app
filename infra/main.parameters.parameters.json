@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "openAIServiceAccountEndpoint": {
+      "value": "https://xxx.openai.azure.com/"
+    },
+    "openAIServiceChatDeployName": {
+      "value": "gpt-4o"
+    },
+    "openAIServiceEmbeddingsDeployName": {
+      "value": "text-embedding-3-large"
+    },
+    "searchProductIndexName": {
+      "value": "rag-poc"
+    }
+  }
+}

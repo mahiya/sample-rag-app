@@ -1,0 +1,8 @@
+tqdm==4.67.0
+Flask==3.1.0
+openai==1.54.4
+pydantic==2.9.2
+python-dotenv==1.0.1
+azure-identity==1.19.0
+azure-search-documents==11.5.2
+azure-monitor-opentelemetry==1.6.4
