@@ -28,6 +28,10 @@ python -m pip install -r requirements.txt
 ```
 
 ## Azure 環境の準備
+Azure リソースを作成する方法は以下の3通りがあります：
+1. [Azure Portal](https://portal.azure.com) で作成する。
+2. Azure CLI で作成する
+3. IaC で作成する (Azure Resource Manager または Azure Bicep)
 
 ### Azure リソースのデプロイ
 ```sh
@@ -69,4 +73,25 @@ python indexing.py
 python app.py
 
 # 実行後、http://127.0.0.1:5000 へアクセス
+```
+
+## Web アプリケーションのデプロイ
+
+[deploy_app.sh](deploy_app.sh)を実行する (以下の通りのスクリプトを実行)。
+
+```sh
+# デプロイ設定
+REGION='japaneast'       # Azure App Service リソースのリージョン
+RESOURCE_GROUP=""        # リソースグループの名前
+APP_SERVICE_PLAN_NAME="" # Azure App Service プランの名前
+APP_SERVICE_NAME=""      # Azure App Service の名前
+RUNTIME="PYTHON:3.11"    # ランタイム
+
+# Azure App Service へ Web アプリケーションをデプロイする
+az webapp up \
+    --location $REGION \
+    --resource-group $RESOURCE_GROUP \
+    --plan $APP_SERVICE_PLAN_NAME \
+    --name $APP_SERVICE_NAME \
+    --runtime $RUNTIME
 ```
